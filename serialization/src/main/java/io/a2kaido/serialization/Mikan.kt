@@ -5,4 +5,11 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 @SerialName("Mikan")
-data class Mikan(val kawa: Int, val mi: Int) : Fruit(true)
+sealed class Mikan : Fruit(true) {
+    abstract val kawa: Int
+    abstract val mi: Int
+}
+
+@Serializable
+@SerialName("Awesome")
+data class AwesomeMikan(override val kawa: Int, override val mi: Int) : Mikan()

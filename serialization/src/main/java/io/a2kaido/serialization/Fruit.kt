@@ -10,6 +10,6 @@ abstract class Fruit(val hasSeed: Boolean)
 
 val module = SerializersModule {
     polymorphic(Fruit::class) {
-        subclass(Mikan::class)
+        subclass(AwesomeMikan::class)
     }
 }

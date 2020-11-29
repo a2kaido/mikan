@@ -8,13 +8,13 @@ class MikanBoxTest {
 
     @Test
     fun `MikanBox is serializable`() {
-        val mikan = Mikan(1, 8)
+        val mikan = AwesomeMikan(1, 8)
         val mikanBox = MikanBox(listOf(mikan, mikan, mikan))
 
         val serialized = Json.encodeToString(MikanBox.serializer(), mikanBox)
 
         assertEquals(
-            """{"mikans":[{"hasSeed":true,"kawa":1,"mi":8},{"hasSeed":true,"kawa":1,"mi":8},{"hasSeed":true,"kawa":1,"mi":8}]}""",
+            """{"mikans":[{"type":"Awesome","hasSeed":true,"kawa":1,"mi":8},{"type":"Awesome","hasSeed":true,"kawa":1,"mi":8},{"type":"Awesome","hasSeed":true,"kawa":1,"mi":8}]}""",
             serialized
         )
         assertEquals(mikanBox, Json.decodeFromString(MikanBox.serializer(), serialized))
