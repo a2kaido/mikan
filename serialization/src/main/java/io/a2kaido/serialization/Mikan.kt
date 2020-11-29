@@ -1,4 +1,6 @@
 package io.a2kaido.serialization
 
-class Mikan {
-}
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Mikan(val kawa: Int, val mi: Int)
