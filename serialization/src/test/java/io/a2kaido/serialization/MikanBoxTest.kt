@@ -13,7 +13,10 @@ class MikanBoxTest {
 
         val serialized = Json.encodeToString(MikanBox.serializer(), mikanBox)
 
-        assertEquals("{\"mikans\":[{\"kawa\":1,\"mi\":8},{\"kawa\":1,\"mi\":8},{\"kawa\":1,\"mi\":8}]}", serialized)
+        assertEquals(
+            """{"mikans":[{"hasSeed":true,"kawa":1,"mi":8},{"hasSeed":true,"kawa":1,"mi":8},{"hasSeed":true,"kawa":1,"mi":8}]}""",
+            serialized
+        )
         assertEquals(mikanBox, Json.decodeFromString(MikanBox.serializer(), serialized))
     }
 }

@@ -12,7 +12,7 @@ class MikanTest {
 
         val serialized = Json.encodeToString(Mikan.serializer(), mikan)
 
-        assertEquals("{\"kawa\":1,\"mi\":8}", serialized)
+        assertEquals("{\"hasSeed\":true,\"kawa\":1,\"mi\":8}", serialized)
         assertEquals(mikan, Json.decodeFromString(Mikan.serializer(), serialized))
     }
 }
