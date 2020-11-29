@@ -12,4 +12,8 @@ sealed class Mikan : Fruit(true) {
 
 @Serializable
 @SerialName("Awesome")
-data class AwesomeMikan(override val kawa: Int, override val mi: Int) : Mikan()
+data class AwesomeMikan(override val kawa: Int, override val mi: Int, val value: Int) : Mikan()
+
+@Serializable
+@SerialName("Good")
+data class GoodMikan(override val kawa: Int, override val mi: Int, val place: String) : Mikan()
