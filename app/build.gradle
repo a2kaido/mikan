@@ -72,6 +72,8 @@ dependencies {
     implementation "androidx.compose.runtime:runtime-livedata:$composeVersion"
     // UI Tests
     androidTestImplementation "androidx.compose.ui:ui-test:$composeVersion"
+    // Navigation
+    implementation "androidx.navigation:navigation-compose:1.0.0-alpha04"
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
